@@ -1,5 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import node from "@astrojs/node";
+import clerk from "@clerk/astro";
+import { dark } from "@clerk/themes";
+import { esMX } from "@clerk/localizations";
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -7,5 +11,13 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()]
-  }
+  },
+  integrations: [clerk({
+    localization: esMX,
+    appearance: {
+      baseTheme: dark
+    }
+  })],
+  adapter: node({ mode: "standalone" }),
+  output: "server"
 });
