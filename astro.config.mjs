@@ -1,11 +1,12 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import node from "@astrojs/node";
 import clerk from "@clerk/astro";
 import { dark } from "@clerk/themes";
 import { esMX } from "@clerk/localizations";
 
 import tailwindcss from '@tailwindcss/vite';
+
+import vercel from "@astrojs/vercel";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,6 @@ export default defineConfig({
       baseTheme: dark
     }
   })],
-  adapter: node({ mode: "standalone" }),
+  adapter: vercel(),
   output: "server"
 });
