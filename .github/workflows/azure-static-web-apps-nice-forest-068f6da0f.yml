@@ -1,5 +1,4 @@
 name: Azure Static Web Apps CI/CD
-
 on:
   push:
     branches:
@@ -8,7 +7,6 @@ on:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
-
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -32,7 +30,12 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-
+        env:
+          PUBLIC_CLERK_PUBLISHABLE_KEY: ${{ secrets.PUBLIC_CLERK_PUBLISHABLE_KEY }}
+          # Agrega otras variables de Clerk si son necesarias:
+          # PUBLIC_CLERK_SIGN_IN_URL: ${{ secrets.PUBLIC_CLERK_SIGN_IN_URL }}
+          # PUBLIC_CLERK_SIGN_UP_URL: ${{ secrets.PUBLIC_CLERK_SIGN_UP_URL }}
+          # CLERK_SECRET_KEY: ${{ secrets.CLERK_SECRET_KEY }}
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
