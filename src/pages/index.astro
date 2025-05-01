@@ -1,12 +1,12 @@
 ---
-import { SignIn, UserButton } from '@clerk/astro/components';
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/astro/components';
 import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Iniciar sesion">
-	<h1>Aqui tenemos el inicio</h1>
-	<div class="p-6 border-2 border-black rounded h-full w-full flex items-center justify-center">
-		<div class="border-2 border-white rounded w-[600px] h-[800px] flex items-center justify-center">
-			<a href="./historical" class="bg-blue-400 p-2 rounded hover:opacity-80 transition">Iniciar sesion</a>
-		</div>
-	</div>
+	<SignedOut>
+		<SignInButton mode="modal" />
+	  </SignedOut>
+	  <SignedIn>
+		<UserButton showName />
+	  </SignedIn>
 </Layout>
