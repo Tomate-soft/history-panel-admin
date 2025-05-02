@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import { SignIn ,UserButton } from "@clerk/astro/components";
-import { HistoricalIndex } from "../Routes/Historicalndex";
+import { HistoricalIndex } from "../Routes/HistoricalIndex/Historicalndex";
 const  user = await Astro.locals.currentUser();
 if (!user){
     return new Response("Unauthorized", { status: 401 })
