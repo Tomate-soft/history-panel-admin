@@ -16,7 +16,7 @@ const user = await Astro.locals.currentUser();
 				<img src="assets/tomateLogo.svg" class="w-[400px]" alt="" />
 				<h1 class="-mt-6 text-2xl">Historial de ventas</h1>
 				<UserButton  />
-				<p>Hola de nuevo! {user?.firstName} Puedes <a href="/historical" >Ir al panel de ventas</a></p>
+				<p>Hola de nuevo! {user?.firstName} Puedes <a href="/historical" class="underline font-semibold" >Ir al panel de ventas</a></p>
 			  </div>
 	  </SignedIn>
 	 <SignedOut>

@@ -1,6 +1,12 @@
 import { SignedIn, UserButton } from '@clerk/astro/react'
 import styles from './HistoricalIndex.module.css'
 
+import {
+    FluentProvider,
+    webLightTheme,
+    Button
+} from "@fluentui/react-components";
+
 export const HistoricalIndex = () => {
     return (
         <div className={styles.container}>
@@ -13,6 +19,9 @@ export const HistoricalIndex = () => {
             <h1>Aca empezamos con las tablas
             <p>aca ira la tabla de contenido</p></h1>
             <h2>Al parecer todo funciona perfecto</h2>
+            <FluentProvider theme={webLightTheme}>
+                <Button>Button</Button>
+            </FluentProvider>
         </div>
     )
 }

@@ -15,6 +15,7 @@
     "@clerk/astro": "^2.6.10",
     "@clerk/localizations": "^3.14.2",
     "@clerk/themes": "^2.2.38",
+    "@fluentui/react-components": "^9.63.0",
     "@tailwindcss/vite": "^4.1.4",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.3",
