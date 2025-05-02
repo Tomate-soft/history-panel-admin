@@ -5,16 +5,19 @@ import Header from '../components/Header.astro';
 const user = await Astro.locals.currentUser();
 ---
 <Layout title="Iniciar sesion">
-		<Header/>
+		<SignedOut>
+			<header class="flex justify-end py-4 px-8">
+				<SignInButton/>
+			</header>
+
+		</SignedOut>
 	  <SignedIn>
 			<UserButton showName />
 			<div class="p-4rounded-xl w-1/2 mx-auto h-1/2 flex flex-col justify-center items-center gap-8">
 				<img src="assets/tomateLogo.svg" class="w-[400px]" alt="" />
 				<h1 class="-mt-6 text-2xl">Historial de ventas</h1>
-				<UserButton showName />
-				<p>Hola de nuevo {user?.firstName},  
-				</p>
-				<a href="/historical" class="bg-red-800 text-white px-4 py-2 rounded">Ir al panel de ventas</a>
+				<UserButton  />
+				<p>Hola de nuevo! {user?.firstName} Puedes <a href="/historical" class="bg-red-800 text-white px-4 py-2 rounded">Ir al panel de ventas</a></p>
 			  </div>
 	  </SignedIn>
 	 <SignedOut>
