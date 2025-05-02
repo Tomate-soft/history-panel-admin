@@ -1,0 +1,11 @@
+---
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/astro/react";
+---
+<header class="flex justify-end py-4 px-8">
+    <SignedOut>
+        <SignInButton/>
+    </SignedOut>
+    <SignedIn>
+        <UserButton showName/>
+    </SignedIn>
+</header>

@@ -1,16 +1,27 @@
 ---
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/astro/components';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 const user = await Astro.locals.currentUser();
 ---
 <Layout title="Iniciar sesion">
-	<SignedOut>
-		<SignInButton mode="modal" />
-		<h1>Iniciar sesion</h1>
-	  </SignedOut>
+		<Header/>
 	  <SignedIn>
-		<UserButton showName />
-		<h1>Bienvenido {user?.firstName}</h1>
-		<a href="/historical">ir al panel de contenido</a>
+			<UserButton showName />
+			<div class="p-4rounded-xl w-1/2 mx-auto h-1/2 flex flex-col justify-center items-center gap-8">
+				<img src="assets/tomateLogo.svg" class="w-[400px]" alt="" />
+				<h1 class="-mt-6 text-2xl">Historial de ventas</h1>
+				<UserButton showName />
+				<p>Hola de nuevo {user?.firstName},  
+				</p>
+				<a href="/historical" class="bg-red-800 text-white px-4 py-2 rounded">Ir al panel de ventas</a>
+			  </div>
 	  </SignedIn>
+	 <SignedOut>
+		<div class="p-4rounded-xl w-1/2 mx-auto h-1/2 flex flex-col justify-center items-center gap-8">
+			<img src="assets/tomateLogo.svg" class="w-[400px]" alt="" />
+			<h1 class="-mt-6 text-2xl">Historial de ventas</h1>
+			<a href="/historical" class="bg-red-800 text-white px-4 py-2 rounded">Iniciar sesion</a>
+		  </div>
+	 </SignedOut>
 </Layout>
