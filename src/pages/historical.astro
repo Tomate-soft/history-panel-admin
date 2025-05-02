@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro"
 import { SignIn ,UserButton } from "@clerk/astro/components";
+import { HistoricalIndex } from "../Routes/Historicalndex";
 const  user = await Astro.locals.currentUser();
 if (!user){
     return new Response("Unauthorized", { status: 401 })
@@ -16,8 +17,7 @@ if (!user){
 ---
 <Layout title="Tabla de contenido">
     <UserButton showName/>
-    <h1>Aca empezamos con las tablas
-    <p>aca ira la tabla de contenido</p></h1>
+    <HistoricalIndex client:visible/>
 </Layout>
 
 
