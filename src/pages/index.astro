@@ -1,7 +1,7 @@
 ---
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/astro/components';
+import RewritePeriodsTable from '../components/react/Table/RewritePeriod';
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
 const user = await Astro.locals.currentUser();
 ---
 <Layout title="Iniciar sesion">
@@ -9,7 +9,6 @@ const user = await Astro.locals.currentUser();
 			<header class="flex justify-end py-4 px-8">
 				<SignInButton/>
 			</header>
-
 		</SignedOut>
 	  <SignedIn>
 			<div class="p-4rounded-xl w-1/2 mx-auto h-1/2 flex flex-col justify-center items-center gap-8">
@@ -26,4 +25,11 @@ const user = await Astro.locals.currentUser();
 			<a href="/historical" class="bg-red-800 text-white px-4 py-2 rounded">Iniciar sesion</a>
 		  </div>
 	 </SignedOut>
-</Layout>
+	 <!-- <main class="h-full p-2 flex flex-col gap-2 ">
+		<header class="flex justify-between  h-[60px] py-2 px-4 rounded-xl bg-[linear-gradient(180deg,rgba(249,249,249,0.15)_0%,rgba(249,249,249,0.03)_100%)] shadow-[5px_5px_10px_0px_#0000001a]">
+			<img src="assets/tomateLogo.svg" class="w-[160px]" alt="">
+			<UserButton/>
+		</header>
+		 <RewritePeriodsTable />
+	 </main> -->
+</Layout>	
