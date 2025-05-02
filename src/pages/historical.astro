@@ -1,27 +1,26 @@
 ---
-import type { AstroIntegrationLogger } from "astro";
 import Layout from "../layouts/Layout.astro"
-import { SignIn, SignUp ,UserButton } from "@clerk/astro/components";
+import { SignIn ,UserButton } from "@clerk/astro/components";
 const  user = await Astro.locals.currentUser();
-const auth = await Astro.locals.auth();
 if (!user){
     return new Response("Unauthorized", { status: 401 })
 }
 
-if(auth){
-    console.log(auth)
-}
-if(user){
-    console.log(user)
-}
+// if(auth){
+//     console.log(auth)
+// }
+// if(user){
+//     console.log(user)
+// }
 /* aca traeremos la data, en este caso  los futuros REWRITES PERIODS */
 ---
 <Layout title="Tabla de contenido">
+    <UserButton showName/>
+<!-- 
         <SignIn>
             <h1>Acda pondremos las nuevas tablas</h1>
             <p>Bienvenido de nuevo. {user.firstName}</p> <a href="/historical">ir al panel de contenido</a> 
-            <UserButton showName/>
-        </SignIn>
+        </SignIn> -->
 </Layout>
 
 
