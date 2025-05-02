@@ -39,7 +39,8 @@ export default function RewritePeriodsTable() {
                 <h2>Historial de periodos operativos</h2>
             </section> 
           <section >
-          <table className={styles.table}>
+         <div className={styles.tableContainer}>
+         <table className={styles.table}>
                 <thead>
                   <tr>
                     {OPERATING_PERIODS_TABLE_HEADERS.map((header) => (
@@ -60,6 +61,7 @@ export default function RewritePeriodsTable() {
                   </tr>
                 </tbody>
           </table>
+         </div>
           </section>
         </div>
       </main>
