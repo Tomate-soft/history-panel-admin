@@ -25,3 +25,5 @@ export const HistoricalIndex = () => {
         </FluentProvider>
     )
 }
+
+export default HistoricalIndex

@@ -2,6 +2,7 @@
     "conventionalCommits.scopes": [
         "update hot",
         "apt hot",
-        "apt hot"
+        "apt hot",
+        "hot reload"
     ]
 }
