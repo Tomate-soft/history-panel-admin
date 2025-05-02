@@ -1,13 +1,16 @@
 ---
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/astro/components';
 import Layout from '../layouts/Layout.astro';
+const user = await Astro.locals.currentUser();
 ---
 <Layout title="Iniciar sesion">
 	<SignedOut>
 		<SignInButton mode="modal" />
+		<h1>Iniciar sesion</h1>
 	  </SignedOut>
 	  <SignedIn>
 		<UserButton showName />
+		<h1>Bienvenido {user?.firstName}</h1>
 		<a href="/historical">ir al panel de contenido</a>
 	  </SignedIn>
 </Layout>
