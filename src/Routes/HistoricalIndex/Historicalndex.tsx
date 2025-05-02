@@ -9,19 +9,19 @@ import {
 
 export const HistoricalIndex = () => {
     return (
-        <div className={styles.container}>
-            <header>
-                <SignedIn>
-                    <UserButton/>
-                </SignedIn>
-            </header>
-            <h1>Historical Index desde react</h1>
-            <h1>Aca empezamos con las tablas
-            <p>aca ira la tabla de contenido</p></h1>
-            <h2>Al parecer todo funciona perfecto</h2>
-            <FluentProvider theme={webLightTheme}>
+        <FluentProvider theme={webLightTheme}>
+            <div className={styles.container}>
+                <header>
+                    <SignedIn>
+                        <UserButton/>
+                    </SignedIn>
+                </header>
+                <h1>Historical Index desde react</h1>
+                <h1>Aca empezamos con las tablas
+                <p>aca ira la tabla de contenido</p></h1>
+                <h2>Al parecer todo funciona perfecto</h2>
                 <Button>Button</Button>
-            </FluentProvider>
-        </div>
+            </div>
+        </FluentProvider>
     )
 }
