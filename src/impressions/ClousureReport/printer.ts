@@ -1,4 +1,5 @@
 import jsPDF from 'jspdf';
+import "jspdf-autotable";
 // import { StylesConfigsInterface } from '../types/stylesConfig.types';
 // import { DataReceiver, PrinterProps, State } from '../types/printer.d.types';
 import { centrarTexto } from './centerText';
