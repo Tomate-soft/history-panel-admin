@@ -1,11 +1,9 @@
 import jsPDF from 'jspdf';
-import {applyPlugin} from 'jspdf-autotable';
 // import { StylesConfigsInterface } from '../types/stylesConfig.types';
 // import { DataReceiver, PrinterProps, State } from '../types/printer.d.types';
 import { centrarTexto } from './centerText';
 import type { StylesConfigsInterface } from './types/stylesConfig';
 import type { DataReceiver, PrinterProps, State } from './types/printer.types';
-applyPlugin(jsPDF)
 
 export const printer = ({ name, state }: PrinterProps, doc: jsPDF) => ({
   printTable: () => {
