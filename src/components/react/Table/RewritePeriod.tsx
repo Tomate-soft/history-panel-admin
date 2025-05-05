@@ -35,6 +35,7 @@ const [periodsArray, setPeriodsArray] = useState([]);
 
   useEffect(() => {
     getPeriods().then((data) => setPeriodsArray(data));
+    console.log(periodsArray);
   }, []);
 
   return (
@@ -56,7 +57,7 @@ const [periodsArray, setPeriodsArray] = useState([]);
                 </thead>
                 <tbody>
                   <tr>
-                    <td>{periodsArray[0]._id}</td>
+                    <td>{periodsArray[0]?._id}</td>
                     <td>2</td>
                     <td>3</td>
                     <td>4</td>
