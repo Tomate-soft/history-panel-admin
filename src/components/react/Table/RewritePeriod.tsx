@@ -56,16 +56,18 @@ const [periodsArray, setPeriodsArray] = useState([]);
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>{periodsArray[0]?._id}</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                    <td>8</td>
-                  </tr>
+                 {periodsArray.map((period) => (
+                    <tr key={period?._id}>
+                      <td>{period?.createdAt}</td>
+                      <td>{period?.operationalClousure?.totalSellsAmount}</td>
+                      <td>{period?.createdAt}</td>
+                      <td>{period?.createdAt}</td>
+                      <td>{period?.createdAt}</td>
+                      <td>{period?.createdAt}</td>
+                      <td>{period?.createdAt}</td>
+                      <td>{period?.createdAt}</td>
+                    </tr>
+                  ))}
                 </tbody>
           </table>
          </div>
