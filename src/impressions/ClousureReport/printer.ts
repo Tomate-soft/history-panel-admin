@@ -7,7 +7,6 @@ import type { DataReceiver, PrinterProps, State } from './types/printer.types';
 
 export const printer = ({ name, state }: PrinterProps, doc: jsPDF) => ({
   printTable: () => {
-    //@ts-ignore
     doc.autoTable(state);
   },
 

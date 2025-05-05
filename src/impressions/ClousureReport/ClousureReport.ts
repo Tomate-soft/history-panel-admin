@@ -1,5 +1,5 @@
 import jsPDF from 'jspdf'
-import 'jspdf-autotable'
+import { applyPlugin } from 'jspdf-autotable'
 import { type centerTextProps, headerStyle } from './types/reports.types'
 // import logo from '../../assets/tomateLogo.png';
 import {
@@ -29,6 +29,7 @@ export const generateOperatingPeriodReport = (period: any) => {
   if (!period) return
   const closing = period.operationalClousure
   console.log(closing)
+  applyPlugin(jsPDF)
   const doc = new jsPDF()
   doc.setFontSize(10)
 
