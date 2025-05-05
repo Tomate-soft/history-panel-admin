@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import styles from "./table.module.css"
+import { getPeriods } from "../../../services/getPeriods";
 
 export default function RewritePeriodsTable() {
 //   const [processing, setProcessing] = useState(Processing.INITIAL);
@@ -19,6 +21,7 @@ export default function RewritePeriodsTable() {
 //     generateOperatingPeriodReport(element);
 //     addNotification('Reporte generado exitosamente');
 //   };
+const [periodsArray, setPeriodsArray] = useState([]);
  const OPERATING_PERIODS_TABLE_HEADERS = [
     'Fecha de apertura',
     'Total de venta',
@@ -29,7 +32,10 @@ export default function RewritePeriodsTable() {
     'Descarga',
     'Caja chica',
   ];
-  
+
+  useEffect(() => {
+    getPeriods().then((data) => setPeriodsArray(data));
+  }, []);
 
   return (
     <>
@@ -50,7 +56,7 @@ export default function RewritePeriodsTable() {
                 </thead>
                 <tbody>
                   <tr>
-                    <td>1</td>
+                    <td>{periodsArray[0]._id}</td>
                     <td>2</td>
                     <td>3</td>
                     <td>4</td>
