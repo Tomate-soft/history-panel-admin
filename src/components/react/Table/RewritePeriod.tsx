@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./table.module.css"
 import { getPeriods } from "../../../services/getPeriods";
+import { generateOperatingPeriodReport } from "../../../impressions/ClousureReport/ClousureReport";
 
 export default function RewritePeriodsTable() {
 //   const [processing, setProcessing] = useState(Processing.INITIAL);
@@ -21,6 +22,12 @@ export default function RewritePeriodsTable() {
 //     generateOperatingPeriodReport(element);
 //     addNotification('Reporte generado exitosamente');
 //   };
+
+const [period, setPeriod] = useState(null);
+const handleDownload = (element) => {
+  setPeriod(element);
+  generateOperatingPeriodReport(element);
+};
 const [periodsArray, setPeriodsArray] = useState([]);
  const OPERATING_PERIODS_TABLE_HEADERS = [
     'Fecha de apertura',
@@ -65,7 +72,7 @@ const [periodsArray, setPeriodsArray] = useState([]);
                       <td>{period?.createdAt}</td>
                       <td>{period?.createdAt}</td>
                       <td>{period?.createdAt}</td>
-                      <td>{period?.createdAt}</td>
+                      <td><button onClick={() => handleDownload(period)}>Descargar</button></td>
                     </tr>
                   ))}
                 </tbody>
