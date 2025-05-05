@@ -1,7 +1,7 @@
 import jsPDF from 'jspdf'
 import 'jspdf-autotable'
 import { type centerTextProps, headerStyle } from './types/reports.types'
-import logo from '../../assets/tomateLogo.png';
+// import logo from '../../assets/tomateLogo.png';
 import {
   CANCELLATIONS_POSITION,
   COURTESIES_POSITION,

@@ -3,10 +3,11 @@ import jsPDF from 'jspdf';
 // import { DataReceiver, PrinterProps, State } from '../types/printer.d.types';
 import { centrarTexto } from './centerText';
 import type { StylesConfigsInterface } from './types/stylesConfig';
-import type { DataReceiver, PrinterProps } from './types/printer.types';
+import type { DataReceiver, PrinterProps, State } from './types/printer.types';
 
 export const printer = ({ name, state }: PrinterProps, doc: jsPDF) => ({
   printTable: () => {
+    //@ts-ignore
     doc.autoTable(state);
   },
 
