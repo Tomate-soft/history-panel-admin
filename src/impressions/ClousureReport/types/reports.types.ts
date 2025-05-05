@@ -1,3 +1,5 @@
+import type jsPDF from "jspdf";
+
 export type headerStyleProps = {
   fontSize: number;
   textColor: number[];

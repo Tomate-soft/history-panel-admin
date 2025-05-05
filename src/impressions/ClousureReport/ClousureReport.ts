@@ -52,7 +52,7 @@ export const generateOperatingPeriodReport = (period: any) => {
   ]
 
   // Agregar logo y encabezados
-  doc.addImage(logo as unknown as string, 'PNG', 10, 15, 36, 12)
+  doc.addImage(logo, 'PNG', 10, 15, 36, 12)
   headerData.forEach((header) => centrarTexto(header))
   doc.line(10, 48, 200, 48)
   doc.text('RESUMEN DE VENTAS', 10, 56)
